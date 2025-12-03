@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	  html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+	    overflow-x: hidden;
+	    
+        }
+body {
+            background-image: url("images/squares.jpg");
+            background-size: cover;       
+            background-position: center;  
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+	}
+ 
+.navbar {
+	    top: 0;
+	    left: 0;
+	    height: 60px;
+            display: flex;
+            justify-content: space-between; width: 100%;
+            align-items: center; 
+            position: fixed;
+            padding: 0 30px;
+	    z-index: 1000;
+            background: rgba(255, 255, 255, 0.7);
+	    box-sizing: border-box;
+	}
+
+.navbar-left .name {
+    	    font-weight: bold; 
+	    font-size: 0.9rem;
+	}
+    
+
+.navbar-right a {
+	    margin-left: 20px;
+            text-decoration: none;
+            color: black;
+            gap: 20px;
+	    font-weight: 500;
+        }
+
+.navbar-right a:hover {
+    color: #ed85b9; 
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    padding: 60px 20px 120px 20px;
+    box-sizing: border-box;
+
+    }
+
+.vl {
+  position: absolute;
+  width: 5px;
+  background-color: #ed85b9;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120px;
+  bottom: 120px;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+ }
+
+.timeline-block {
+   max-width: 100%;
+   display: flex;
+   justify-content: flex-start;
+}
+
+.timeline-block.left {
+  justify-content: flex-start;
+}
+
+.timeline-block.left .left-content
+ {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 700px;
+}
+
+.timeline-block.left .left-content p {text-align: center;}
+
+.timeline-block.left .left-content p:first-of-type {
+    text-align: center;      
+    margin: 0 0 10px 0;
+}
+
+.timeline-block.left .left-content p:nth-of-type(2) {
+    max-width: 340px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.timeline-block.left .left-content .long-text-wrap {
+  text-align: center;
+  margin: 0;
+  padding-left: 0;
+  max-width: 85%;
+}
+
+
+.hl {
+  width: 200px;
+  height: 4px;
+  background-color: #ed85b9;
+  position: relative;
+  margin-bottom: 10px;  
+  top: 0;
+  }
+
+.timeline-block.right .right-content .hl {
+    width: 650px;         
+    height: 4px;
+    background-color: #ed85b9;
+    margin-left: -50px;   
+    margin-bottom: 10px;
+}
+
+
+.timeline-block.left .left-content img.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-top: 15px;
+ }
+
+
+.timeline-block.left .left-content img.music {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+.timeline-block.right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  }
+
+.timeline-block.right .right-content p {text-align: center}
+
+.timeline-block.right .right-content
+ {
+   max-width: 50%;
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+   margin-right: 0;
+}
+
+.timeline-block.right .right-content img.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 15px 0 10px 0;
+  display: block;
+ }
+
+
+.timeline-block.right .right-content p:first-of-type,
+   
+.timeline-block.right .right-content p:nth-of-type(2) {
+    text-align: center;
+    margin-left: 10px; 
+}
+
+.timeline-block.right .right-content .long-text-wrap {
+  text-align: center;
+  margin: 0;
+  padding-left: 0;
+  max-width: 85%;
+}
+
+.timeline-block.right .right-content img.flower {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+.timeline-block.right .right-content img.raya {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+.timeline-block.right .right-content img.tho {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+.uitm-block .left-content {
+   position: relative;
+   
+}
+
+.uitm-block .hl { 
+    position: absolute;
+    left: 50px;         
+    width: 670px;        
+    height: 4px;
+    background-color: #ed85b9;
+    top: -20px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.uitm-year {
+    display: inline-block;     
+    white-space: nowrap;        
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Britannic Bold';
+    color: #333;
+    margin-top: 0;
+}
+
+.uitm-block .left-content .long-text-wrap {
+  text-align: center;
+  margin: 0;
+  padding-left: 0;
+  max-width: 85%;
+}
+
+
+.timeline-block.left .left-content img.soputceh {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+.timeline-block.left .left-content img.peri {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #e6aecb;
+  align-self: center;
+  }
+
+
+.timeline-block p {margin: 5px 0;}
+
+
+.audio {
+	display: block;
+        margin: 0 auto 30px auto; 
+}
+
+.footer {
+	    position: fixed;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+            text-align: center;
+            padding: 10px;
+	    color: #000;
+            background: rgba(255, 255, 255, 0.5);
+	    height: 60px;
+        }
+
+</style>
+	<title>Education</title>
+</head>
+<body>
+	<div class="navbar" style="display:flex; justify-content:space-between; width:100%; padding:20px;">
+	<div class="navbar-left" style="display:flex; align-items:center; gap:10px;">
+	<span style="font-weight: bold; font-size:1.2rem;">&#9825 Sofea Rizan</span>
+	<span style="font-family:'Courier New'; color:black;">/ INFORMATION MANAGEMENT STUDENT</span>	
+	</div>
+	
+	<div class="navbar-right">
+  		<a href="index.html" style="margin-left:20px; text-decoration:none; color: #ed85b9;">Home</a>
+  		<a href="about.html" style="margin-left:20px; text-decoration:none; color:  #ed85b9;">About</a>
+  		<a href="education.html" style="margin-left:20px; text-decoration:none; color:  #ed85b9;">Education</a>
+  		<a href="experience.html" style="margin-left:20px; text-decoration:none; color:  #ed85b9;">Experience</a>
+  		</div>
+	</div>
+
+	<div class="main-content">
+	<p style="font-weight: bold; font-size: 1.8rem; font-family:'Cascadia Mono'; color: #ed85b9; margin-bottom: 10px;"><u>Education</u></p>
+	
+	<div class="vl"></div>
+	<div class="timeline-block left">
+	<div class="left-content">
+	<p><a href="https://www.facebook.com/SKSeberangJaya/">
+	<img class="profile" src="images/sksj.jpg"></a></p>
+		<p style="font-weight: bold; font-size: 1.2rem; font-family:'Britannic Bold'; color: #333; margin-top: 0;">SK SEBERANG JAYA (2012-2017)</p>
+		
+		<div class="long-text-wrap">
+		<p style="font-size: 1.1rem; font-family: 'Palatino Linotype'; margin-top: 0;">School year had been a blast where I join competitions representing our school (mainly musical-based). We won a gold medal the first one and bronze the second. I am also the drum major for the school's sports day and it was a thrill. Below is a picture of a keyboard-competition that I participate during Standard 6 in Kuala Lumpur</p>
+		</div>
+		<img class="music" src="images/music.jpg" alt"Keyboard Competition" style="margin-top: 10px;">
+		</div>
+		</div>
+
+		<div class="timeline-block right">
+		<div class="right-content">
+		<div class="hl"></div>
+		<p><a href="https://www.facebook.com/p/SMK-Tun-Hussein-Onn-100091559627268/">
+		<img class="profile" src="images/tunHusseinOnn.jpg"></a></p>
+		<p style="font-weight: bold; font-size: 1.2rem; font-family:'Britannic Bold'; color: #333; margin-top: 0;">SMK TUN HUSSEIN ONN (2018-2023)</p>
+
+		<div class="long-text-wrap">
+		<p style="font-size: 1.1rem; font-family: 'Palatino Linotype'; margin-top: 0;">The chemistry I share and the same amount of energy poured with my classmates will be the reason why secondary school are my best years. I started stepping out of my comfort zone where I emceed for every week's assembly, became Deputy of Head Programme for two class events in which we won and I also became one of the important people for our Additional Mathematic's teacher's farewell party. Below are some pictures with my best friends that are program-related and the graduation day</p>
+		</div>
+		<img class="flower" src="images/flower.jpg" alt"Flower Girls" style="margin-top: 10px;">
+		<img class="raya" src="images/raya.jpg" alt"Raya Feast" style="margin-top: 20px;">
+		<img class="tho" src="images/tho.jpg" alt"Tho's Graduation" style="margin-top: 20px;">
+		</div>
+		</div>
+	<div class="timeline-block left uitm-block">
+ 	<div class="left-content">
+	<div class="hl uitm-line"></div>
+	<p><a href="https://uitm.edu.my/ms/">
+	<img class="profile" src="images/uitm.jpg" alt="UiTM"></a></p>
+	<p class="uitm-year">UiTM Sungai Petani Campus (2023-2026)</p>
+
+	<div class="long-text-wrap">
+	<p style="font-size: 1.1rem; font-family: 'Palatino Linotype'; margin-top: 0;">It has been an emotional coaster ride but I am able to endure it with four best friends around where things are more fun (and chaotic). They have always been there through my highs and lows and never did once they complaint and for that I love them with all of my heart. It is sad to part ways very soon but at least fate brought us together. Here are my best friends who I owe too much for being the unpaid therapists and comedians I never knew I need</p>
+	</div>
+		<img class="music" src="images/soputceh.jpg" alt"soputceh" style="margin-top: 10px;">
+		<img class="music" src="images/peri.jpg" alt"peri" style="margin-top: 10px;">
+
+
+
+		</div>			
+		</div>
+		
+	
+	<audio src="song/carriedAway.mp3" autoplay loop controls style="display:block; margin: 0 auto; position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);"></audio>
+	
+		
+       	<div class="footer" style="text-align: center; padding: 10px; width: 100%; color: #000; background: rgba(255, 255, 255, 0.5);">
+        <p><i>&copy; 2025 by Sofea Rizan</i></p>
+    </div>
+		
+</body>
+</html>
